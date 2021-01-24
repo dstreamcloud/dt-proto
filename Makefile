@@ -1,8 +1,8 @@
 RESOURCE_PROTO_FILES= $(shell find api/resources -type f -name '*.proto')
 SERVICE_PROTO_FILES= $(shell find api/services -type f -name '*.proto')
 
-.PHONY: default
-default: proto-tools
+.PHONY: build
+build: deps
 	protoc \
 	    --go_opt=module=github.com/dstreamcloud/proto \
 	    --go-grpc_opt=module=github.com/dstreamcloud/proto \
@@ -19,8 +19,8 @@ default: proto-tools
 		$(RESOURCE_PROTO_FILES)
 
 
-.PHONY: proto-tools
-proto-tools:
+.PHONY: deps
+deps:
 	go install github.com/joesonw/proto-tools/cmd/protoc-gen-clone
 	go install github.com/joesonw/proto-tools/cmd/protoc-gen-setter
 
