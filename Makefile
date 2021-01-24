@@ -23,4 +23,6 @@ build: deps
 deps:
 	go install github.com/joesonw/proto-tools/cmd/protoc-gen-clone
 	go install github.com/joesonw/proto-tools/cmd/protoc-gen-setter
+	go install google.golang.org/protobuf/cmd/protoc-gen-go
+	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc
 
