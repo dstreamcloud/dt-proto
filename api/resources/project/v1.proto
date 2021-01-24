@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/dstreamcloud/proto/pbgo/resources/project;project_pb";
+package project;
+
+import "resources/dag/v1.proto";
+
+message V1 {
+    string id = 1;
+    int64 createdAtUs = 2;
+    int64 updatedAtUs = 3;
+    string orgID = 4;
+    string createdByUserID = 5;
+
+    string name = 11;
+    string remarks = 12;
+    map<string, string> environments = 13;
+    dag.V1.Release source = 14;
+}

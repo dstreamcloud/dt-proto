@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "github.com/dstreamcloud/proto/pbgo/resources/agent;agent_pb";
+package agent;
+
+
+message V1 {
+
+    message Agent {
+        
+        
+
+        string id = 1 ;
+        string organizationID = 3  ;
+
+        string name = 11;
+        string token = 12;
+        Status status = 13;
+    }
+
+    enum Status {
+        UNKNOWN = 0;
+        IDLE = 1;
+        BUSY = 2;
+    }
+}
+

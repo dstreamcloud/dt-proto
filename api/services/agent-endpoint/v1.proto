@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option go_package = "github.com/dstreamcloud/proto/pbgo/services/agent_endpoint;agent_endpoint_pb";
+package agent_endpoint;
+
+import "resources/job/v1.proto";
+
+message SubscribeV1 {
+    message Request {
+        string token = 1;
+    }
+
+    message Response {
+        oneof Message {
+            job.v1.Job job = 1;
+        }
+    }
+}
+
+message ReportJobV1 {
+    message Request {
+        string token = 1;
+        job.v1.Job job = 2;
+    }
+
+    message Response {
+    }
+}
+
+service V1 {
+    rpc SubscribeV1(SubscribeV1.Request) returns (stream SubscribeV1.Response) {}
+    rpc ReportJobV1(stream ReportJobV1.Request) returns (ReportJobV1.Response) {}
+}
+
