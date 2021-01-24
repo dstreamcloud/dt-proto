@@ -8,8 +8,8 @@ func (z *V1_Agent) Clone() *V1_Agent {
 	}
 	zz := &V1_Agent{}
 	zz.Id = z.Id
-	zz.OrganizationID = z.OrganizationID
-	zz.Name = z.Name
+	zz.UpdatedAt = z.UpdatedAt
+	zz.OwnerID = z.OwnerID
 	zz.Token = z.Token
 	zz.Status = z.Status
 	return zz

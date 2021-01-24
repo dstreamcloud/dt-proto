@@ -6,12 +6,12 @@ func (z *V1_Agent) SetId(v string) *V1_Agent {
 	z.Id = v
 	return z
 }
-func (z *V1_Agent) SetOrganizationID(v string) *V1_Agent {
-	z.OrganizationID = v
+func (z *V1_Agent) SetUpdatedAt(v int64) *V1_Agent {
+	z.UpdatedAt = v
 	return z
 }
-func (z *V1_Agent) SetName(v string) *V1_Agent {
-	z.Name = v
+func (z *V1_Agent) SetOwnerID(v string) *V1_Agent {
+	z.OwnerID = v
 	return z
 }
 func (z *V1_Agent) SetToken(v string) *V1_Agent {
