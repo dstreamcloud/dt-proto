@@ -10,8 +10,8 @@ func (z *V1) Clone() *V1 {
 	zz.Id = z.Id
 	zz.CreatedAt = z.CreatedAt
 	zz.UpdatedAt = z.UpdatedAt
-	zz.OrgID = z.OrgID
-	zz.CreatedByUserID = z.CreatedByUserID
+	zz.OrganizationID = z.OrganizationID
+	zz.OwnerID = z.OwnerID
 	zz.Name = z.Name
 	zz.Remarks = z.Remarks
 	zz0 := make(map[string]string)

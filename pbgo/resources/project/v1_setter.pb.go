@@ -18,12 +18,12 @@ func (z *V1) SetUpdatedAt(v int64) *V1 {
 	z.UpdatedAt = v
 	return z
 }
-func (z *V1) SetOrgID(v string) *V1 {
-	z.OrgID = v
+func (z *V1) SetOrganizationID(v string) *V1 {
+	z.OrganizationID = v
 	return z
 }
-func (z *V1) SetCreatedByUserID(v string) *V1 {
-	z.CreatedByUserID = v
+func (z *V1) SetOwnerID(v string) *V1 {
+	z.OwnerID = v
 	return z
 }
 func (z *V1) SetName(v string) *V1 {
