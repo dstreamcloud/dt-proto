@@ -1,6 +1,9 @@
 RESOURCE_PROTO_FILES= $(shell find api/resources -type f -name '*.proto')
 SERVICE_PROTO_FILES= $(shell find api/services -type f -name '*.proto')
 
+.PHONY: default
+default: build
+
 .PHONY: build
 build: deps
 	protoc \
