@@ -10,12 +10,12 @@ func (z *V1) SetId(v string) *V1 {
 	z.Id = v
 	return z
 }
-func (z *V1) SetCreatedAtUs(v int64) *V1 {
-	z.CreatedAtUs = v
+func (z *V1) SetCreatedAt(v int64) *V1 {
+	z.CreatedAt = v
 	return z
 }
-func (z *V1) SetUpdatedAtUs(v int64) *V1 {
-	z.UpdatedAtUs = v
+func (z *V1) SetUpdatedAt(v int64) *V1 {
+	z.UpdatedAt = v
 	return z
 }
 func (z *V1) SetOrgID(v string) *V1 {

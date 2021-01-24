@@ -8,8 +8,8 @@ func (z *V1) Clone() *V1 {
 	}
 	zz := &V1{}
 	zz.Id = z.Id
-	zz.CreatedAtUs = z.CreatedAtUs
-	zz.UpdatedAtUs = z.UpdatedAtUs
+	zz.CreatedAt = z.CreatedAt
+	zz.UpdatedAt = z.UpdatedAt
 	zz.OrgID = z.OrgID
 	zz.CreatedByUserID = z.CreatedByUserID
 	zz.Name = z.Name
