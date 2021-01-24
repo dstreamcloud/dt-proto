@@ -10,7 +10,7 @@ func (z *V1) Clone() *V1 {
 	zz.Id = z.Id
 	zz.CreatedAtUs = z.CreatedAtUs
 	zz.UpdatedAtUs = z.UpdatedAtUs
-	zz.OrgID = z.OrgID
+	zz.OrganizationID = z.OrganizationID
 	zz.ProjectID = z.ProjectID
 	zz.Name = z.Name
 	zz.ObjectURL = z.ObjectURL

@@ -14,8 +14,8 @@ func (z *V1) SetUpdatedAtUs(v int64) *V1 {
 	z.UpdatedAtUs = v
 	return z
 }
-func (z *V1) SetOrgID(v string) *V1 {
-	z.OrgID = v
+func (z *V1) SetOrganizationID(v string) *V1 {
+	z.OrganizationID = v
 	return z
 }
 func (z *V1) SetProjectID(v string) *V1 {
