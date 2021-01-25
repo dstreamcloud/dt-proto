@@ -18,6 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type V1Client interface {
+	RegisterV1(ctx context.Context, in *RegisterV1_Request, opts ...grpc.CallOption) (*RegisterV1_Response, error)
 	SubscribeV1(ctx context.Context, in *SubscribeV1_Request, opts ...grpc.CallOption) (V1_SubscribeV1Client, error)
 	ReportJobV1(ctx context.Context, opts ...grpc.CallOption) (V1_ReportJobV1Client, error)
 }
@@ -28,6 +29,15 @@ type v1Client struct {
 
 func NewV1Client(cc grpc.ClientConnInterface) V1Client {
 	return &v1Client{cc}
+}
+
+func (c *v1Client) RegisterV1(ctx context.Context, in *RegisterV1_Request, opts ...grpc.CallOption) (*RegisterV1_Response, error) {
+	out := new(RegisterV1_Response)
+	err := c.cc.Invoke(ctx, "/agent_endpoint.V1/RegisterV1", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *v1Client) SubscribeV1(ctx context.Context, in *SubscribeV1_Request, opts ...grpc.CallOption) (V1_SubscribeV1Client, error) {
@@ -100,6 +110,7 @@ func (x *v1ReportJobV1Client) CloseAndRecv() (*ReportJobV1_Response, error) {
 // All implementations must embed UnimplementedV1Server
 // for forward compatibility
 type V1Server interface {
+	RegisterV1(context.Context, *RegisterV1_Request) (*RegisterV1_Response, error)
 	SubscribeV1(*SubscribeV1_Request, V1_SubscribeV1Server) error
 	ReportJobV1(V1_ReportJobV1Server) error
 	mustEmbedUnimplementedV1Server()
@@ -109,6 +120,9 @@ type V1Server interface {
 type UnimplementedV1Server struct {
 }
 
+func (UnimplementedV1Server) RegisterV1(context.Context, *RegisterV1_Request) (*RegisterV1_Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterV1 not implemented")
+}
 func (UnimplementedV1Server) SubscribeV1(*SubscribeV1_Request, V1_SubscribeV1Server) error {
 	return status.Errorf(codes.Unimplemented, "method SubscribeV1 not implemented")
 }
@@ -126,6 +140,24 @@ type UnsafeV1Server interface {
 
 func RegisterV1Server(s grpc.ServiceRegistrar, srv V1Server) {
 	s.RegisterService(&V1_ServiceDesc, srv)
+}
+
+func _V1_RegisterV1_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RegisterV1_Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(V1Server).RegisterV1(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/agent_endpoint.V1/RegisterV1",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(V1Server).RegisterV1(ctx, req.(*RegisterV1_Request))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _V1_SubscribeV1_Handler(srv interface{}, stream grpc.ServerStream) error {
@@ -181,7 +213,12 @@ func (x *v1ReportJobV1Server) Recv() (*ReportJobV1_Request, error) {
 var V1_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "agent_endpoint.V1",
 	HandlerType: (*V1Server)(nil),
-	Methods:     []grpc.MethodDesc{},
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "RegisterV1",
+			Handler:    _V1_RegisterV1_Handler,
+		},
+	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "SubscribeV1",

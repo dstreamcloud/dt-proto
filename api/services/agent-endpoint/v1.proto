@@ -5,9 +5,22 @@ package agent_endpoint;
 
 import "resources/job/v1.proto";
 
-message SubscribeV1 {
+message RegisterV1 {
     message Request {
         string token = 1;
+        string name = 2;
+    }
+
+    message Response {
+        string id = 1;
+        string token = 2;
+    }
+}
+
+message SubscribeV1 {
+    message Request {
+        string id = 1;
+        string token = 2;
     }
 
     message Response {
@@ -19,8 +32,9 @@ message SubscribeV1 {
 
 message ReportJobV1 {
     message Request {
-        string token = 1;
-        job.v1.Job job = 2;
+        string id = 1;
+        string token = 2;
+        job.v1.Job job = 3;
     }
 
     message Response {
@@ -28,6 +42,7 @@ message ReportJobV1 {
 }
 
 service V1 {
+    rpc RegisterV1(RegisterV1.Request) returns (RegisterV1.Response) {}
     rpc SubscribeV1(SubscribeV1.Request) returns (stream SubscribeV1.Response) {}
     rpc ReportJobV1(stream ReportJobV1.Request) returns (ReportJobV1.Response) {}
 }

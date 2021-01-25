@@ -10,8 +10,8 @@ func (z *V1_Release) SetCreatedAt(v int64) *V1_Release {
 	z.CreatedAt = v
 	return z
 }
-func (z *V1_Release) SetOrganizationID(v string) *V1_Release {
-	z.OrganizationID = v
+func (z *V1_Release) SetTeamID(v string) *V1_Release {
+	z.TeamID = v
 	return z
 }
 func (z *V1_Release) SetProjectID(v string) *V1_Release {
@@ -86,8 +86,8 @@ func (z *V1_Source) SetUpdatedAt(v int64) *V1_Source {
 	z.UpdatedAt = v
 	return z
 }
-func (z *V1_Source) SetOrganizationID(v string) *V1_Source {
-	z.OrganizationID = v
+func (z *V1_Source) SetTeamID(v string) *V1_Source {
+	z.TeamID = v
 	return z
 }
 func (z *V1_Source) SetProjectID(v string) *V1_Source {

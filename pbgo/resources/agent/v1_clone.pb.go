@@ -10,7 +10,7 @@ func (z *V1_Agent) Clone() *V1_Agent {
 	zz.Id = z.Id
 	zz.CreatedAt = z.CreatedAt
 	zz.UpdatedAt = z.UpdatedAt
-	zz.OrganizationID = z.OrganizationID
+	zz.TeamID = z.TeamID
 	zz.OwnerID = z.OwnerID
 	zz.Name = z.Name
 	zz.Token = z.Token

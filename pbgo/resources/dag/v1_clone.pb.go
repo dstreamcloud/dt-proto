@@ -9,7 +9,7 @@ func (z *V1_Release) Clone() *V1_Release {
 	zz := &V1_Release{}
 	zz.Id = z.Id
 	zz.CreatedAt = z.CreatedAt
-	zz.OrganizationID = z.OrganizationID
+	zz.TeamID = z.TeamID
 	zz.ProjectID = z.ProjectID
 	zz.OwnerID = z.OwnerID
 	zz.SourceID = z.SourceID
@@ -47,7 +47,7 @@ func (z *V1_Source) Clone() *V1_Source {
 	zz.Id = z.Id
 	zz.CreatedAt = z.CreatedAt
 	zz.UpdatedAt = z.UpdatedAt
-	zz.OrganizationID = z.OrganizationID
+	zz.TeamID = z.TeamID
 	zz.ProjectID = z.ProjectID
 	zz.OwnerID = z.OwnerID
 	zz.Name = z.Name

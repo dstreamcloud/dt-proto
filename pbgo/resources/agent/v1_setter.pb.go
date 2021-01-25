@@ -14,8 +14,8 @@ func (z *V1_Agent) SetUpdatedAt(v int64) *V1_Agent {
 	z.UpdatedAt = v
 	return z
 }
-func (z *V1_Agent) SetOrganizationID(v string) *V1_Agent {
-	z.OrganizationID = v
+func (z *V1_Agent) SetTeamID(v string) *V1_Agent {
+	z.TeamID = v
 	return z
 }
 func (z *V1_Agent) SetOwnerID(v string) *V1_Agent {

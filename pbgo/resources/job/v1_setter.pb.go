@@ -14,8 +14,8 @@ func (z *V1_Pipeline) SetUpdatedAt(v int64) *V1_Pipeline {
 	z.UpdatedAt = v
 	return z
 }
-func (z *V1_Pipeline) SetOrganizationID(v string) *V1_Pipeline {
-	z.OrganizationID = v
+func (z *V1_Pipeline) SetTeamID(v string) *V1_Pipeline {
+	z.TeamID = v
 	return z
 }
 func (z *V1_Pipeline) SetProjectID(v string) *V1_Pipeline {
@@ -62,8 +62,8 @@ func (z *V1_Job) SetUpdatedAt(v int64) *V1_Job {
 	z.UpdatedAt = v
 	return z
 }
-func (z *V1_Job) SetOrganizationID(v string) *V1_Job {
-	z.OrganizationID = v
+func (z *V1_Job) SetTeamID(v string) *V1_Job {
+	z.TeamID = v
 	return z
 }
 func (z *V1_Job) SetProjectID(v string) *V1_Job {

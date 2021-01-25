@@ -10,7 +10,7 @@ func (z *V1_Pipeline) Clone() *V1_Pipeline {
 	zz.Id = z.Id
 	zz.CreatedAt = z.CreatedAt
 	zz.UpdatedAt = z.UpdatedAt
-	zz.OrganizationID = z.OrganizationID
+	zz.TeamID = z.TeamID
 	zz.ProjectID = z.ProjectID
 	zz.OwnerID = z.OwnerID
 	zz.Remarks = z.Remarks
@@ -35,7 +35,7 @@ func (z *V1_Job) Clone() *V1_Job {
 	zz.Id = z.Id
 	zz.CreatedAt = z.CreatedAt
 	zz.UpdatedAt = z.UpdatedAt
-	zz.OrganizationID = z.OrganizationID
+	zz.TeamID = z.TeamID
 	zz.ProjectID = z.ProjectID
 	zz.OwnerID = z.OwnerID
 	zz.PipelineID = z.PipelineID
