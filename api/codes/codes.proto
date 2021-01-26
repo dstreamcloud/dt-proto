@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/dstreamcloud/proto/pbgo/codes;codes_pb";
+option go_package = "github.com/dstreamcloud/dt-proto/pbgo/codes;codes_pb";
 
 package codes;
 

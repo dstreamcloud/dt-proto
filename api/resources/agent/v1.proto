@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/dstreamcloud/proto/pbgo/resources/agent;agent_pb";
+option go_package = "github.com/dstreamcloud/dt-proto/pbgo/resources/agent;agent_pb";
 package agent;
 
 

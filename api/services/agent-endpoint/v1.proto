@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/dstreamcloud/proto/pbgo/services/agent_endpoint;agent_endpoint_pb";
+option go_package = "github.com/dstreamcloud/dt-proto/pbgo/services/agent_endpoint;agent_endpoint_pb";
 package agent_endpoint;
 
 import "resources/job/v1.proto";

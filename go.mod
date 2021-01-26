@@ -1,4 +1,4 @@
-module github.com/dstreamcloud/proto
+module github.com/dstreamcloud/dt-proto
 
 go 1.15
 
