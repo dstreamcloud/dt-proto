@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "github.com/dstreamcloud/dt-proto/pbgo/codes;codes_pb";
+
+package codes;
+
+enum Error {
+    UNKNOWN = 0;
+    INVALID_REQUEST = 1;
+    NOT_FOUND = 2;
+}
