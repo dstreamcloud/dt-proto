@@ -54,6 +54,21 @@ func (z *V1_Job) Clone() *V1_Job {
 		zz1[k] = v
 	}
 	zz.Environments = zz1
+	zz2 := make([]*V1_StatusHistory, len(z.StatusHistories))
+	for i := range z.StatusHistories {
+		zz2[i] = z.StatusHistories[i].Clone()
+	}
+	zz.StatusHistories = zz2
+	return zz
+}
+func (z *V1_StatusHistory) Clone() *V1_StatusHistory {
+	if z == nil {
+		return nil
+	}
+	zz := &V1_StatusHistory{}
+	zz.FromStatus = z.FromStatus
+	zz.ToStatus = z.ToStatus
+	zz.CreatedAt = z.CreatedAt
 	return zz
 }
 func (z *V1_Settings) Clone() *V1_Settings {
@@ -64,6 +79,7 @@ func (z *V1_Settings) Clone() *V1_Settings {
 	zz.Concurrency = z.Concurrency
 	zz.Total = z.Total
 	zz.StopAt = z.StopAt
+	zz.RunSeconds = z.RunSeconds
 	return zz
 }
 func (z *V1) Clone() *V1 {

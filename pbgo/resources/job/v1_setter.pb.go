@@ -86,7 +86,7 @@ func (z *V1_Job) SetAgentID(v string) *V1_Job {
 	z.AgentID = v
 	return z
 }
-func (z *V1_Job) SetStatus(v V1_Job_Status) *V1_Job {
+func (z *V1_Job) SetStatus(v V1_Status) *V1_Job {
 	z.Status = v
 	return z
 }
@@ -114,6 +114,26 @@ func (z *V1_Job) PutEnvironments(k string, v string) *V1_Job {
 	z.Environments[k] = v
 	return z
 }
+func (z *V1_Job) SetStatusHistories(v []*V1_StatusHistory) *V1_Job {
+	z.StatusHistories = v
+	return z
+}
+func (z *V1_Job) AppendStatusHistories(v *V1_StatusHistory) *V1_Job {
+	z.StatusHistories = append(z.StatusHistories, v)
+	return z
+}
+func (z *V1_StatusHistory) SetFromStatus(v V1_Status) *V1_StatusHistory {
+	z.FromStatus = v
+	return z
+}
+func (z *V1_StatusHistory) SetToStatus(v V1_Status) *V1_StatusHistory {
+	z.ToStatus = v
+	return z
+}
+func (z *V1_StatusHistory) SetCreatedAt(v int64) *V1_StatusHistory {
+	z.CreatedAt = v
+	return z
+}
 func (z *V1_Settings) SetConcurrency(v int64) *V1_Settings {
 	z.Concurrency = v
 	return z
@@ -124,5 +144,9 @@ func (z *V1_Settings) SetTotal(v int64) *V1_Settings {
 }
 func (z *V1_Settings) SetStopAt(v int64) *V1_Settings {
 	z.StopAt = v
+	return z
+}
+func (z *V1_Settings) SetRunSeconds(v int64) *V1_Settings {
+	z.RunSeconds = v
 	return z
 }

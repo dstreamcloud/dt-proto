@@ -20,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 type V1Client interface {
 	RegisterV1(ctx context.Context, in *RegisterV1_Request, opts ...grpc.CallOption) (*RegisterV1_Response, error)
 	SubscribeV1(ctx context.Context, in *SubscribeV1_Request, opts ...grpc.CallOption) (V1_SubscribeV1Client, error)
-	ReportJobV1(ctx context.Context, opts ...grpc.CallOption) (V1_ReportJobV1Client, error)
+	ReportJobV1(ctx context.Context, in *ReportJobV1_Request, opts ...grpc.CallOption) (*ReportJobV1_Response, error)
 }
 
 type v1Client struct {
@@ -72,38 +72,13 @@ func (x *v1SubscribeV1Client) Recv() (*SubscribeV1_Response, error) {
 	return m, nil
 }
 
-func (c *v1Client) ReportJobV1(ctx context.Context, opts ...grpc.CallOption) (V1_ReportJobV1Client, error) {
-	stream, err := c.cc.NewStream(ctx, &V1_ServiceDesc.Streams[1], "/agent_endpoint.V1/ReportJobV1", opts...)
+func (c *v1Client) ReportJobV1(ctx context.Context, in *ReportJobV1_Request, opts ...grpc.CallOption) (*ReportJobV1_Response, error) {
+	out := new(ReportJobV1_Response)
+	err := c.cc.Invoke(ctx, "/agent_endpoint.V1/ReportJobV1", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &v1ReportJobV1Client{stream}
-	return x, nil
-}
-
-type V1_ReportJobV1Client interface {
-	Send(*ReportJobV1_Request) error
-	CloseAndRecv() (*ReportJobV1_Response, error)
-	grpc.ClientStream
-}
-
-type v1ReportJobV1Client struct {
-	grpc.ClientStream
-}
-
-func (x *v1ReportJobV1Client) Send(m *ReportJobV1_Request) error {
-	return x.ClientStream.SendMsg(m)
-}
-
-func (x *v1ReportJobV1Client) CloseAndRecv() (*ReportJobV1_Response, error) {
-	if err := x.ClientStream.CloseSend(); err != nil {
-		return nil, err
-	}
-	m := new(ReportJobV1_Response)
-	if err := x.ClientStream.RecvMsg(m); err != nil {
-		return nil, err
-	}
-	return m, nil
+	return out, nil
 }
 
 // V1Server is the server API for V1 service.
@@ -112,7 +87,7 @@ func (x *v1ReportJobV1Client) CloseAndRecv() (*ReportJobV1_Response, error) {
 type V1Server interface {
 	RegisterV1(context.Context, *RegisterV1_Request) (*RegisterV1_Response, error)
 	SubscribeV1(*SubscribeV1_Request, V1_SubscribeV1Server) error
-	ReportJobV1(V1_ReportJobV1Server) error
+	ReportJobV1(context.Context, *ReportJobV1_Request) (*ReportJobV1_Response, error)
 	mustEmbedUnimplementedV1Server()
 }
 
@@ -126,8 +101,8 @@ func (UnimplementedV1Server) RegisterV1(context.Context, *RegisterV1_Request) (*
 func (UnimplementedV1Server) SubscribeV1(*SubscribeV1_Request, V1_SubscribeV1Server) error {
 	return status.Errorf(codes.Unimplemented, "method SubscribeV1 not implemented")
 }
-func (UnimplementedV1Server) ReportJobV1(V1_ReportJobV1Server) error {
-	return status.Errorf(codes.Unimplemented, "method ReportJobV1 not implemented")
+func (UnimplementedV1Server) ReportJobV1(context.Context, *ReportJobV1_Request) (*ReportJobV1_Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReportJobV1 not implemented")
 }
 func (UnimplementedV1Server) mustEmbedUnimplementedV1Server() {}
 
@@ -181,30 +156,22 @@ func (x *v1SubscribeV1Server) Send(m *SubscribeV1_Response) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _V1_ReportJobV1_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(V1Server).ReportJobV1(&v1ReportJobV1Server{stream})
-}
-
-type V1_ReportJobV1Server interface {
-	SendAndClose(*ReportJobV1_Response) error
-	Recv() (*ReportJobV1_Request, error)
-	grpc.ServerStream
-}
-
-type v1ReportJobV1Server struct {
-	grpc.ServerStream
-}
-
-func (x *v1ReportJobV1Server) SendAndClose(m *ReportJobV1_Response) error {
-	return x.ServerStream.SendMsg(m)
-}
-
-func (x *v1ReportJobV1Server) Recv() (*ReportJobV1_Request, error) {
-	m := new(ReportJobV1_Request)
-	if err := x.ServerStream.RecvMsg(m); err != nil {
+func _V1_ReportJobV1_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportJobV1_Request)
+	if err := dec(in); err != nil {
 		return nil, err
 	}
-	return m, nil
+	if interceptor == nil {
+		return srv.(V1Server).ReportJobV1(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/agent_endpoint.V1/ReportJobV1",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(V1Server).ReportJobV1(ctx, req.(*ReportJobV1_Request))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 // V1_ServiceDesc is the grpc.ServiceDesc for V1 service.
@@ -218,17 +185,16 @@ var V1_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "RegisterV1",
 			Handler:    _V1_RegisterV1_Handler,
 		},
+		{
+			MethodName: "ReportJobV1",
+			Handler:    _V1_ReportJobV1_Handler,
+		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "SubscribeV1",
 			Handler:       _V1_SubscribeV1_Handler,
 			ServerStreams: true,
-		},
-		{
-			StreamName:    "ReportJobV1",
-			Handler:       _V1_ReportJobV1_Handler,
-			ClientStreams: true,
 		},
 	},
 	Metadata: "services/agent-endpoint/v1.proto",
