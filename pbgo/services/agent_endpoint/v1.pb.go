@@ -140,6 +140,44 @@ func (*ReportJobV1) Descriptor() ([]byte, []int) {
 	return file_services_agent_endpoint_v1_proto_rawDescGZIP(), []int{2}
 }
 
+type ReportStatV1 struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ReportStatV1) Reset() {
+	*x = ReportStatV1{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReportStatV1) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportStatV1) ProtoMessage() {}
+
+func (x *ReportStatV1) ProtoReflect() protoreflect.Message {
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportStatV1.ProtoReflect.Descriptor instead.
+func (*ReportStatV1) Descriptor() ([]byte, []int) {
+	return file_services_agent_endpoint_v1_proto_rawDescGZIP(), []int{3}
+}
+
 type RegisterV1_Request struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -152,7 +190,7 @@ type RegisterV1_Request struct {
 func (x *RegisterV1_Request) Reset() {
 	*x = RegisterV1_Request{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_services_agent_endpoint_v1_proto_msgTypes[3]
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -165,7 +203,7 @@ func (x *RegisterV1_Request) String() string {
 func (*RegisterV1_Request) ProtoMessage() {}
 
 func (x *RegisterV1_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_services_agent_endpoint_v1_proto_msgTypes[3]
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -207,7 +245,7 @@ type RegisterV1_Response struct {
 func (x *RegisterV1_Response) Reset() {
 	*x = RegisterV1_Response{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_services_agent_endpoint_v1_proto_msgTypes[4]
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -220,7 +258,7 @@ func (x *RegisterV1_Response) String() string {
 func (*RegisterV1_Response) ProtoMessage() {}
 
 func (x *RegisterV1_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_services_agent_endpoint_v1_proto_msgTypes[4]
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +300,7 @@ type SubscribeV1_Request struct {
 func (x *SubscribeV1_Request) Reset() {
 	*x = SubscribeV1_Request{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_services_agent_endpoint_v1_proto_msgTypes[5]
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -275,7 +313,7 @@ func (x *SubscribeV1_Request) String() string {
 func (*SubscribeV1_Request) ProtoMessage() {}
 
 func (x *SubscribeV1_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_services_agent_endpoint_v1_proto_msgTypes[5]
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -318,7 +356,7 @@ type SubscribeV1_Response struct {
 func (x *SubscribeV1_Response) Reset() {
 	*x = SubscribeV1_Response{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_services_agent_endpoint_v1_proto_msgTypes[6]
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -331,7 +369,7 @@ func (x *SubscribeV1_Response) String() string {
 func (*SubscribeV1_Response) ProtoMessage() {}
 
 func (x *SubscribeV1_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_services_agent_endpoint_v1_proto_msgTypes[6]
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -384,7 +422,7 @@ type ReportJobV1_Request struct {
 func (x *ReportJobV1_Request) Reset() {
 	*x = ReportJobV1_Request{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_services_agent_endpoint_v1_proto_msgTypes[7]
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -397,7 +435,7 @@ func (x *ReportJobV1_Request) String() string {
 func (*ReportJobV1_Request) ProtoMessage() {}
 
 func (x *ReportJobV1_Request) ProtoReflect() protoreflect.Message {
-	mi := &file_services_agent_endpoint_v1_proto_msgTypes[7]
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +481,7 @@ type ReportJobV1_Response struct {
 func (x *ReportJobV1_Response) Reset() {
 	*x = ReportJobV1_Response{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_services_agent_endpoint_v1_proto_msgTypes[8]
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -456,7 +494,7 @@ func (x *ReportJobV1_Response) String() string {
 func (*ReportJobV1_Response) ProtoMessage() {}
 
 func (x *ReportJobV1_Response) ProtoReflect() protoreflect.Message {
-	mi := &file_services_agent_endpoint_v1_proto_msgTypes[8]
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -470,6 +508,186 @@ func (x *ReportJobV1_Response) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ReportJobV1_Response.ProtoReflect.Descriptor instead.
 func (*ReportJobV1_Response) Descriptor() ([]byte, []int) {
 	return file_services_agent_endpoint_v1_proto_rawDescGZIP(), []int{2, 1}
+}
+
+type ReportStatV1_Request struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id    string                       `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Token string                       `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
+	JobID string                       `protobuf:"bytes,3,opt,name=jobID,proto3" json:"jobID,omitempty"`
+	Stats []*ReportStatV1_Request_Stat `protobuf:"bytes,4,rep,name=stats,proto3" json:"stats,omitempty"`
+}
+
+func (x *ReportStatV1_Request) Reset() {
+	*x = ReportStatV1_Request{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReportStatV1_Request) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportStatV1_Request) ProtoMessage() {}
+
+func (x *ReportStatV1_Request) ProtoReflect() protoreflect.Message {
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportStatV1_Request.ProtoReflect.Descriptor instead.
+func (*ReportStatV1_Request) Descriptor() ([]byte, []int) {
+	return file_services_agent_endpoint_v1_proto_rawDescGZIP(), []int{3, 0}
+}
+
+func (x *ReportStatV1_Request) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *ReportStatV1_Request) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+func (x *ReportStatV1_Request) GetJobID() string {
+	if x != nil {
+		return x.JobID
+	}
+	return ""
+}
+
+func (x *ReportStatV1_Request) GetStats() []*ReportStatV1_Request_Stat {
+	if x != nil {
+		return x.Stats
+	}
+	return nil
+}
+
+type ReportStatV1_Response struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *ReportStatV1_Response) Reset() {
+	*x = ReportStatV1_Response{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReportStatV1_Response) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportStatV1_Response) ProtoMessage() {}
+
+func (x *ReportStatV1_Response) ProtoReflect() protoreflect.Message {
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportStatV1_Response.ProtoReflect.Descriptor instead.
+func (*ReportStatV1_Response) Descriptor() ([]byte, []int) {
+	return file_services_agent_endpoint_v1_proto_rawDescGZIP(), []int{3, 1}
+}
+
+type ReportStatV1_Request_Stat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Name          string             `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	TimestampNano int64              `protobuf:"varint,2,opt,name=timestampNano,proto3" json:"timestampNano,omitempty"`
+	Tags          map[string]string  `protobuf:"bytes,3,rep,name=tags,proto3" json:"tags,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Fields        map[string]float64 `protobuf:"bytes,4,rep,name=fields,proto3" json:"fields,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"fixed64,2,opt,name=value,proto3"`
+}
+
+func (x *ReportStatV1_Request_Stat) Reset() {
+	*x = ReportStatV1_Request_Stat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_services_agent_endpoint_v1_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReportStatV1_Request_Stat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReportStatV1_Request_Stat) ProtoMessage() {}
+
+func (x *ReportStatV1_Request_Stat) ProtoReflect() protoreflect.Message {
+	mi := &file_services_agent_endpoint_v1_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReportStatV1_Request_Stat.ProtoReflect.Descriptor instead.
+func (*ReportStatV1_Request_Stat) Descriptor() ([]byte, []int) {
+	return file_services_agent_endpoint_v1_proto_rawDescGZIP(), []int{3, 0, 0}
+}
+
+func (x *ReportStatV1_Request_Stat) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *ReportStatV1_Request_Stat) GetTimestampNano() int64 {
+	if x != nil {
+		return x.TimestampNano
+	}
+	return 0
+}
+
+func (x *ReportStatV1_Request_Stat) GetTags() map[string]string {
+	if x != nil {
+		return x.Tags
+	}
+	return nil
+}
+
+func (x *ReportStatV1_Request_Stat) GetFields() map[string]float64 {
+	if x != nil {
+		return x.Fields
+	}
+	return nil
 }
 
 var File_services_agent_endpoint_v1_proto protoreflect.FileDescriptor
@@ -501,30 +719,67 @@ var file_services_agent_endpoint_v1_proto_rawDesc = []byte{
 	0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x1d, 0x0a, 0x03, 0x6a, 0x6f, 0x62, 0x18, 0x03,
 	0x20, 0x01, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x6a, 0x6f, 0x62, 0x2e, 0x76, 0x31, 0x2e, 0x4a, 0x6f,
 	0x62, 0x52, 0x03, 0x6a, 0x6f, 0x62, 0x1a, 0x0a, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x32, 0x97, 0x02, 0x0a, 0x02, 0x56, 0x31, 0x12, 0x57, 0x0a, 0x0a, 0x52, 0x65, 0x67,
-	0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x31, 0x12, 0x22, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f,
-	0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65,
-	0x72, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x61, 0x67,
-	0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65, 0x67,
-	0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x5c, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x56,
-	0x31, 0x12, 0x23, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69,
-	0x6e, 0x74, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x56, 0x31, 0x2e, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65,
+	0x73, 0x65, 0x22, 0xf2, 0x03, 0x0a, 0x0c, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x53, 0x74, 0x61,
+	0x74, 0x56, 0x31, 0x1a, 0xd5, 0x03, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12,
+	0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x44, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x6a, 0x6f, 0x62, 0x49, 0x44, 0x12, 0x3f, 0x0a, 0x05, 0x73,
+	0x74, 0x61, 0x74, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x29, 0x2e, 0x61, 0x67, 0x65,
+	0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65, 0x70, 0x6f,
+	0x72, 0x74, 0x53, 0x74, 0x61, 0x74, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x2e, 0x53, 0x74, 0x61, 0x74, 0x52, 0x05, 0x73, 0x74, 0x61, 0x74, 0x73, 0x1a, 0xcc, 0x02, 0x0a,
+	0x04, 0x53, 0x74, 0x61, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x24, 0x0a, 0x0d, 0x74, 0x69, 0x6d,
+	0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x4e, 0x61, 0x6e, 0x6f, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x0d, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x4e, 0x61, 0x6e, 0x6f, 0x12,
+	0x47, 0x0a, 0x04, 0x74, 0x61, 0x67, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x33, 0x2e,
+	0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52,
+	0x65, 0x70, 0x6f, 0x72, 0x74, 0x53, 0x74, 0x61, 0x74, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x2e, 0x54, 0x61, 0x67, 0x73, 0x45, 0x6e, 0x74,
+	0x72, 0x79, 0x52, 0x04, 0x74, 0x61, 0x67, 0x73, 0x12, 0x4d, 0x0a, 0x06, 0x66, 0x69, 0x65, 0x6c,
+	0x64, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x35, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74,
+	0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74,
+	0x53, 0x74, 0x61, 0x74, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53,
+	0x74, 0x61, 0x74, 0x2e, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x52,
+	0x06, 0x66, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x1a, 0x37, 0x0a, 0x09, 0x54, 0x61, 0x67, 0x73, 0x45,
+	0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01,
+	0x1a, 0x39, 0x0a, 0x0b, 0x46, 0x69, 0x65, 0x6c, 0x64, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12,
+	0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65,
+	0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x01,
+	0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a, 0x02, 0x38, 0x01, 0x1a, 0x0a, 0x0a, 0x08, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xf6, 0x02, 0x0a, 0x02, 0x56, 0x31, 0x12, 0x57,
+	0x0a, 0x0a, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x31, 0x12, 0x22, 0x2e, 0x61,
+	0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65,
+	0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x23, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e,
+	0x74, 0x2e, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5c, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x62, 0x65, 0x56, 0x31, 0x12, 0x23, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65,
 	0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
-	0x65, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x30, 0x01,
-	0x12, 0x5a, 0x0a, 0x0b, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x4a, 0x6f, 0x62, 0x56, 0x31, 0x12,
-	0x23, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74,
-	0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x4a, 0x6f, 0x62, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64,
+	0x65, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x61, 0x67,
+	0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x53, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x30, 0x01, 0x12, 0x5a, 0x0a, 0x0b, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x4a,
+	0x6f, 0x62, 0x56, 0x31, 0x12, 0x23, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64,
 	0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x4a, 0x6f, 0x62, 0x56,
-	0x31, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x51, 0x5a, 0x4f,
-	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x64, 0x73, 0x74, 0x72, 0x65,
-	0x61, 0x6d, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x64, 0x74, 0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x2f, 0x70, 0x62, 0x67, 0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x61,
-	0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x3b, 0x61, 0x67,
-	0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x5f, 0x70, 0x62, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x31, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x61, 0x67, 0x65, 0x6e,
+	0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72,
+	0x74, 0x4a, 0x6f, 0x62, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x5d, 0x0a, 0x0c, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x53, 0x74, 0x61, 0x74, 0x56,
+	0x31, 0x12, 0x24, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69,
+	0x6e, 0x74, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x53, 0x74, 0x61, 0x74, 0x56, 0x31, 0x2e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x25, 0x2e, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f,
+	0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74, 0x2e, 0x52, 0x65, 0x70, 0x6f, 0x72, 0x74, 0x53,
+	0x74, 0x61, 0x74, 0x56, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x42, 0x51, 0x5a, 0x4f, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x64,
+	0x73, 0x74, 0x72, 0x65, 0x61, 0x6d, 0x63, 0x6c, 0x6f, 0x75, 0x64, 0x2f, 0x64, 0x74, 0x2d, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x62, 0x67, 0x6f, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
+	0x65, 0x73, 0x2f, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e,
+	0x74, 0x3b, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f, 0x65, 0x6e, 0x64, 0x70, 0x6f, 0x69, 0x6e, 0x74,
+	0x5f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -539,33 +794,44 @@ func file_services_agent_endpoint_v1_proto_rawDescGZIP() []byte {
 	return file_services_agent_endpoint_v1_proto_rawDescData
 }
 
-var file_services_agent_endpoint_v1_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_services_agent_endpoint_v1_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_services_agent_endpoint_v1_proto_goTypes = []interface{}{
-	(*RegisterV1)(nil),           // 0: agent_endpoint.RegisterV1
-	(*SubscribeV1)(nil),          // 1: agent_endpoint.SubscribeV1
-	(*ReportJobV1)(nil),          // 2: agent_endpoint.ReportJobV1
-	(*RegisterV1_Request)(nil),   // 3: agent_endpoint.RegisterV1.Request
-	(*RegisterV1_Response)(nil),  // 4: agent_endpoint.RegisterV1.Response
-	(*SubscribeV1_Request)(nil),  // 5: agent_endpoint.SubscribeV1.Request
-	(*SubscribeV1_Response)(nil), // 6: agent_endpoint.SubscribeV1.Response
-	(*ReportJobV1_Request)(nil),  // 7: agent_endpoint.ReportJobV1.Request
-	(*ReportJobV1_Response)(nil), // 8: agent_endpoint.ReportJobV1.Response
-	(*job.V1_Job)(nil),           // 9: job.v1.Job
+	(*RegisterV1)(nil),                // 0: agent_endpoint.RegisterV1
+	(*SubscribeV1)(nil),               // 1: agent_endpoint.SubscribeV1
+	(*ReportJobV1)(nil),               // 2: agent_endpoint.ReportJobV1
+	(*ReportStatV1)(nil),              // 3: agent_endpoint.ReportStatV1
+	(*RegisterV1_Request)(nil),        // 4: agent_endpoint.RegisterV1.Request
+	(*RegisterV1_Response)(nil),       // 5: agent_endpoint.RegisterV1.Response
+	(*SubscribeV1_Request)(nil),       // 6: agent_endpoint.SubscribeV1.Request
+	(*SubscribeV1_Response)(nil),      // 7: agent_endpoint.SubscribeV1.Response
+	(*ReportJobV1_Request)(nil),       // 8: agent_endpoint.ReportJobV1.Request
+	(*ReportJobV1_Response)(nil),      // 9: agent_endpoint.ReportJobV1.Response
+	(*ReportStatV1_Request)(nil),      // 10: agent_endpoint.ReportStatV1.Request
+	(*ReportStatV1_Response)(nil),     // 11: agent_endpoint.ReportStatV1.Response
+	(*ReportStatV1_Request_Stat)(nil), // 12: agent_endpoint.ReportStatV1.Request.Stat
+	nil,                               // 13: agent_endpoint.ReportStatV1.Request.Stat.TagsEntry
+	nil,                               // 14: agent_endpoint.ReportStatV1.Request.Stat.FieldsEntry
+	(*job.V1_Job)(nil),                // 15: job.v1.Job
 }
 var file_services_agent_endpoint_v1_proto_depIdxs = []int32{
-	9, // 0: agent_endpoint.SubscribeV1.Response.job:type_name -> job.v1.Job
-	9, // 1: agent_endpoint.ReportJobV1.Request.job:type_name -> job.v1.Job
-	3, // 2: agent_endpoint.V1.RegisterV1:input_type -> agent_endpoint.RegisterV1.Request
-	5, // 3: agent_endpoint.V1.SubscribeV1:input_type -> agent_endpoint.SubscribeV1.Request
-	7, // 4: agent_endpoint.V1.ReportJobV1:input_type -> agent_endpoint.ReportJobV1.Request
-	4, // 5: agent_endpoint.V1.RegisterV1:output_type -> agent_endpoint.RegisterV1.Response
-	6, // 6: agent_endpoint.V1.SubscribeV1:output_type -> agent_endpoint.SubscribeV1.Response
-	8, // 7: agent_endpoint.V1.ReportJobV1:output_type -> agent_endpoint.ReportJobV1.Response
-	5, // [5:8] is the sub-list for method output_type
-	2, // [2:5] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	15, // 0: agent_endpoint.SubscribeV1.Response.job:type_name -> job.v1.Job
+	15, // 1: agent_endpoint.ReportJobV1.Request.job:type_name -> job.v1.Job
+	12, // 2: agent_endpoint.ReportStatV1.Request.stats:type_name -> agent_endpoint.ReportStatV1.Request.Stat
+	13, // 3: agent_endpoint.ReportStatV1.Request.Stat.tags:type_name -> agent_endpoint.ReportStatV1.Request.Stat.TagsEntry
+	14, // 4: agent_endpoint.ReportStatV1.Request.Stat.fields:type_name -> agent_endpoint.ReportStatV1.Request.Stat.FieldsEntry
+	4,  // 5: agent_endpoint.V1.RegisterV1:input_type -> agent_endpoint.RegisterV1.Request
+	6,  // 6: agent_endpoint.V1.SubscribeV1:input_type -> agent_endpoint.SubscribeV1.Request
+	8,  // 7: agent_endpoint.V1.ReportJobV1:input_type -> agent_endpoint.ReportJobV1.Request
+	10, // 8: agent_endpoint.V1.ReportStatV1:input_type -> agent_endpoint.ReportStatV1.Request
+	5,  // 9: agent_endpoint.V1.RegisterV1:output_type -> agent_endpoint.RegisterV1.Response
+	7,  // 10: agent_endpoint.V1.SubscribeV1:output_type -> agent_endpoint.SubscribeV1.Response
+	9,  // 11: agent_endpoint.V1.ReportJobV1:output_type -> agent_endpoint.ReportJobV1.Response
+	11, // 12: agent_endpoint.V1.ReportStatV1:output_type -> agent_endpoint.ReportStatV1.Response
+	9,  // [9:13] is the sub-list for method output_type
+	5,  // [5:9] is the sub-list for method input_type
+	5,  // [5:5] is the sub-list for extension type_name
+	5,  // [5:5] is the sub-list for extension extendee
+	0,  // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_services_agent_endpoint_v1_proto_init() }
@@ -611,7 +877,7 @@ func file_services_agent_endpoint_v1_proto_init() {
 			}
 		}
 		file_services_agent_endpoint_v1_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegisterV1_Request); i {
+			switch v := v.(*ReportStatV1); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -623,7 +889,7 @@ func file_services_agent_endpoint_v1_proto_init() {
 			}
 		}
 		file_services_agent_endpoint_v1_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*RegisterV1_Response); i {
+			switch v := v.(*RegisterV1_Request); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -635,7 +901,7 @@ func file_services_agent_endpoint_v1_proto_init() {
 			}
 		}
 		file_services_agent_endpoint_v1_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubscribeV1_Request); i {
+			switch v := v.(*RegisterV1_Response); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -647,7 +913,7 @@ func file_services_agent_endpoint_v1_proto_init() {
 			}
 		}
 		file_services_agent_endpoint_v1_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubscribeV1_Response); i {
+			switch v := v.(*SubscribeV1_Request); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -659,7 +925,7 @@ func file_services_agent_endpoint_v1_proto_init() {
 			}
 		}
 		file_services_agent_endpoint_v1_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReportJobV1_Request); i {
+			switch v := v.(*SubscribeV1_Response); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -671,6 +937,18 @@ func file_services_agent_endpoint_v1_proto_init() {
 			}
 		}
 		file_services_agent_endpoint_v1_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReportJobV1_Request); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_services_agent_endpoint_v1_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ReportJobV1_Response); i {
 			case 0:
 				return &v.state
@@ -682,8 +960,44 @@ func file_services_agent_endpoint_v1_proto_init() {
 				return nil
 			}
 		}
+		file_services_agent_endpoint_v1_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReportStatV1_Request); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_services_agent_endpoint_v1_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReportStatV1_Response); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_services_agent_endpoint_v1_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReportStatV1_Request_Stat); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
-	file_services_agent_endpoint_v1_proto_msgTypes[6].OneofWrappers = []interface{}{
+	file_services_agent_endpoint_v1_proto_msgTypes[7].OneofWrappers = []interface{}{
 		(*SubscribeV1_Response_Job)(nil),
 	}
 	type x struct{}
@@ -692,7 +1006,7 @@ func file_services_agent_endpoint_v1_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_services_agent_endpoint_v1_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

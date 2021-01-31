@@ -21,6 +21,7 @@ type V1Client interface {
 	RegisterV1(ctx context.Context, in *RegisterV1_Request, opts ...grpc.CallOption) (*RegisterV1_Response, error)
 	SubscribeV1(ctx context.Context, in *SubscribeV1_Request, opts ...grpc.CallOption) (V1_SubscribeV1Client, error)
 	ReportJobV1(ctx context.Context, in *ReportJobV1_Request, opts ...grpc.CallOption) (*ReportJobV1_Response, error)
+	ReportStatV1(ctx context.Context, in *ReportStatV1_Request, opts ...grpc.CallOption) (*ReportStatV1_Response, error)
 }
 
 type v1Client struct {
@@ -81,6 +82,15 @@ func (c *v1Client) ReportJobV1(ctx context.Context, in *ReportJobV1_Request, opt
 	return out, nil
 }
 
+func (c *v1Client) ReportStatV1(ctx context.Context, in *ReportStatV1_Request, opts ...grpc.CallOption) (*ReportStatV1_Response, error) {
+	out := new(ReportStatV1_Response)
+	err := c.cc.Invoke(ctx, "/agent_endpoint.V1/ReportStatV1", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // V1Server is the server API for V1 service.
 // All implementations must embed UnimplementedV1Server
 // for forward compatibility
@@ -88,6 +98,7 @@ type V1Server interface {
 	RegisterV1(context.Context, *RegisterV1_Request) (*RegisterV1_Response, error)
 	SubscribeV1(*SubscribeV1_Request, V1_SubscribeV1Server) error
 	ReportJobV1(context.Context, *ReportJobV1_Request) (*ReportJobV1_Response, error)
+	ReportStatV1(context.Context, *ReportStatV1_Request) (*ReportStatV1_Response, error)
 	mustEmbedUnimplementedV1Server()
 }
 
@@ -103,6 +114,9 @@ func (UnimplementedV1Server) SubscribeV1(*SubscribeV1_Request, V1_SubscribeV1Ser
 }
 func (UnimplementedV1Server) ReportJobV1(context.Context, *ReportJobV1_Request) (*ReportJobV1_Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReportJobV1 not implemented")
+}
+func (UnimplementedV1Server) ReportStatV1(context.Context, *ReportStatV1_Request) (*ReportStatV1_Response, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReportStatV1 not implemented")
 }
 func (UnimplementedV1Server) mustEmbedUnimplementedV1Server() {}
 
@@ -174,6 +188,24 @@ func _V1_ReportJobV1_Handler(srv interface{}, ctx context.Context, dec func(inte
 	return interceptor(ctx, in, info, handler)
 }
 
+func _V1_ReportStatV1_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReportStatV1_Request)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(V1Server).ReportStatV1(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/agent_endpoint.V1/ReportStatV1",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(V1Server).ReportStatV1(ctx, req.(*ReportStatV1_Request))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // V1_ServiceDesc is the grpc.ServiceDesc for V1 service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -188,6 +220,10 @@ var V1_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ReportJobV1",
 			Handler:    _V1_ReportJobV1_Handler,
+		},
+		{
+			MethodName: "ReportStatV1",
+			Handler:    _V1_ReportStatV1_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

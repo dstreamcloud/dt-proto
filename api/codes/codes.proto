@@ -6,6 +6,8 @@ package codes;
 
 enum Error {
     UNKNOWN = 0;
-    INVALID_REQUEST = 1;
-    NOT_FOUND = 2;
+    INVALID_REQUEST = 400;
+    UNAUTHORIZED = 401;
+    FORBIDDEN = 403;
+    NOT_FOUND = 404;
 }

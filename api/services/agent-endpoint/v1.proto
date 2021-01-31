@@ -41,9 +41,29 @@ message ReportJobV1 {
     }
 }
 
+message ReportStatV1 {
+    message Request {
+        string id = 1;
+        string token = 2;
+        string jobID = 3;
+        repeated Stat stats = 4;
+
+        message Stat {
+            string name = 1;
+            int64 timestampNano = 2;
+            map<string, string> tags = 3;
+            map<string, double> fields = 4;
+        }
+    }
+
+    message Response {
+    }
+}
+
 service V1 {
     rpc RegisterV1(RegisterV1.Request) returns (RegisterV1.Response) {}
     rpc SubscribeV1(SubscribeV1.Request) returns (stream SubscribeV1.Response) {}
     rpc ReportJobV1(ReportJobV1.Request) returns (ReportJobV1.Response) {}
+    rpc ReportStatV1(ReportStatV1.Request) returns (ReportStatV1.Response) {}
 }
 
